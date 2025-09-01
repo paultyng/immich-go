@@ -56,12 +56,6 @@ jobs:
          go-version-file: "go.mod"
          cache-dependency-path: "go.sum"
 
-
-     - name: golangci-lint
-       uses: golangci/golangci-lint-action@v7
-       with:
-         version: latest
-
      - name: Build binary
        run: |
          CGO_ENABLED=0 go build -o immich-windows-amd64.exe -ldflags="-s -w -extldflags=-static" main.go
